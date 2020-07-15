@@ -1,0 +1,116 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://icon.png" type="Texture2D" id=1]
+
+[sub_resource type="SkeletonModification2DCCDIK" id=1]
+target_nodepath = NodePath("../Target")
+tip_nodepath = NodePath("Bone2D/Bone2D/Bone2D/Bone2D/Tip")
+ccdik_data_chain_length = 4
+joint_data/0/bone_index = 0
+joint_data/0/bone2d_node = NodePath("Bone2D")
+joint_data/0/enable_constraint = true
+joint_data/0/constraint_angle_min = 0.0
+joint_data/0/constraint_angle_max = 90.0
+joint_data/0/constraint_angle_invert = false
+joint_data/0/constraint_in_localspace = true
+joint_data/1/bone_index = 1
+joint_data/1/bone2d_node = NodePath("Bone2D/Bone2D")
+joint_data/1/enable_constraint = false
+joint_data/2/bone_index = 2
+joint_data/2/bone2d_node = NodePath("Bone2D/Bone2D/Bone2D")
+joint_data/2/enable_constraint = true
+joint_data/2/constraint_angle_min = 20.0
+joint_data/2/constraint_angle_max = 340.0
+joint_data/2/constraint_angle_invert = true
+joint_data/2/constraint_in_localspace = true
+joint_data/3/bone_index = 3
+joint_data/3/bone2d_node = NodePath("Bone2D/Bone2D/Bone2D/Bone2D")
+joint_data/3/enable_constraint = true
+joint_data/3/constraint_angle_min = 20.0
+joint_data/3/constraint_angle_max = 340.0
+joint_data/3/constraint_angle_invert = true
+joint_data/3/constraint_in_localspace = true
+
+[sub_resource type="SkeletonModificationStack2D" id=2]
+modification_count = 1
+modifications/0 = SubResource( 1 )
+
+[node name="SkeletonModification_Test03" type="Node2D"]
+script = null
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+position = Vector2( 296, 192 )
+modification_stack = SubResource( 2 )
+script = null
+
+[node name="Bone2D" type="Bone2D" parent="Skeleton2D"]
+skew = 4.37114e-08
+rest = Transform2D( 1, 0, -4.37114e-08, 1, 0, 0 )
+script = null
+
+[node name="Bone2D" type="Bone2D" parent="Skeleton2D/Bone2D"]
+position = Vector2( 96, 0 )
+skew = 4.37114e-08
+rest = Transform2D( 1, 0, -4.37114e-08, 1, 96, 0 )
+script = null
+
+[node name="Sprite2D2" type="Sprite2D" parent="Skeleton2D/Bone2D/Bone2D"]
+self_modulate = Color( 0.537255, 0.890196, 0.45098, 1 )
+position = Vector2( 0, 48 )
+rotation = 1.5708
+scale = Vector2( 1.5, 0.5 )
+skew = 4.37114e-08
+texture = ExtResource( 1 )
+script = null
+
+[node name="Bone2D" type="Bone2D" parent="Skeleton2D/Bone2D/Bone2D"]
+position = Vector2( 0, 96 )
+skew = 4.37114e-08
+rest = Transform2D( 1, 0, -4.37114e-08, 1, 0, 96 )
+auto_calculate_length_and_angle = false
+length = 94.0
+bone_angle = 0.0
+script = null
+
+[node name="Sprite2D3" type="Sprite2D" parent="Skeleton2D/Bone2D/Bone2D/Bone2D"]
+self_modulate = Color( 0.567647, 0.45098, 0.890196, 1 )
+position = Vector2( 48, 0 )
+scale = Vector2( 1.5, 0.5 )
+skew = 4.37114e-08
+texture = ExtResource( 1 )
+script = null
+
+[node name="Bone2D" type="Bone2D" parent="Skeleton2D/Bone2D/Bone2D/Bone2D"]
+position = Vector2( 94, 0 )
+skew = 4.37114e-08
+rest = Transform2D( 1, 0, -4.37114e-08, 1, 94, 0 )
+auto_calculate_length_and_angle = false
+length = 94.0
+bone_angle = 0.0
+script = null
+
+[node name="Sprite2D4" type="Sprite2D" parent="Skeleton2D/Bone2D/Bone2D/Bone2D/Bone2D"]
+self_modulate = Color( 0.45098, 0.890196, 0.704902, 1 )
+position = Vector2( 46, 0 )
+scale = Vector2( 1.5, 0.5 )
+skew = 4.37114e-08
+texture = ExtResource( 1 )
+script = null
+
+[node name="Tip" type="Position2D" parent="Skeleton2D/Bone2D/Bone2D/Bone2D/Bone2D"]
+position = Vector2( 96, 0 )
+skew = 4.37114e-08
+script = null
+
+[node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Bone2D"]
+self_modulate = Color( 0.0313726, 0.678431, 0.929412, 1 )
+position = Vector2( 48, 0 )
+scale = Vector2( 1.5, 0.5 )
+texture = ExtResource( 1 )
+script = null
+
+[node name="Target" type="Sprite2D" parent="."]
+self_modulate = Color( 0.980392, 0.964706, 0.0588235, 1 )
+position = Vector2( 648.495, 402.327 )
+texture = ExtResource( 1 )
+script = null

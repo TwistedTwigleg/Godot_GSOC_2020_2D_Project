@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://icon.png" type="Texture2D" id=1]
+
+[sub_resource type="SkeletonModification2DLookAt" id=1]
+bone_index = 0
+bone2d_node = NodePath("Bone2D")
+target_nodepath = NodePath("../Target")
+enable_constraint = true
+constraint_angle_min = 0.0
+constraint_angle_max = 180.0
+constraint_angle_invert = false
+constraint_in_localspace = true
+
+[sub_resource type="SkeletonModification2DLookAt" id=2]
+bone_index = 1
+bone2d_node = NodePath("Bone2D/Bone2D")
+target_nodepath = NodePath("../Target2")
+enable_constraint = true
+constraint_angle_min = 180.0
+constraint_angle_max = 360.0
+constraint_angle_invert = false
+constraint_in_localspace = false
+
+[sub_resource type="SkeletonModificationStack2D" id=3]
+strength = 1.0
+modification_count = 2
+modifications/0 = SubResource( 1 )
+modifications/1 = SubResource( 2 )
+
+[node name="SkeletonModification_Test01" type="Node2D"]
+script = null
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+position = Vector2( 296, 192 )
+modification_stack = SubResource( 3 )
+script = null
+
+[node name="Bone2D" type="Bone2D" parent="Skeleton2D"]
+skew = 4.37114e-08
+rest = Transform2D( 1, 0, 0, 1, 0, 0 )
+script = null
+
+[node name="Bone2D" type="Bone2D" parent="Skeleton2D/Bone2D"]
+position = Vector2( 96, 0 )
+skew = 4.37114e-08
+rest = Transform2D( 1, 0, 0, 1, 32, 0 )
+auto_calculate_length_and_angle = false
+length = 94.0
+bone_angle = 0.0
+script = null
+
+[node name="Sprite2D2" type="Sprite2D" parent="Skeleton2D/Bone2D/Bone2D"]
+self_modulate = Color( 0.537255, 0.890196, 0.45098, 1 )
+position = Vector2( 48, 0 )
+scale = Vector2( 1.5, 0.5 )
+skew = 4.37114e-08
+texture = ExtResource( 1 )
+script = null
+
+[node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Bone2D"]
+self_modulate = Color( 0.0313726, 0.678431, 0.929412, 1 )
+position = Vector2( 48, 0 )
+scale = Vector2( 1.5, 0.5 )
+texture = ExtResource( 1 )
+script = null
+
+[node name="Target" type="Sprite2D" parent="."]
+self_modulate = Color( 0.980392, 0.964706, 0.0588235, 1 )
+position = Vector2( 540.879, 355.61 )
+texture = ExtResource( 1 )
+script = null
+
+[node name="Target2" type="Sprite2D" parent="."]
+self_modulate = Color( 0.929412, 0.0588235, 0.980392, 1 )
+position = Vector2( 611.482, 77.6078 )
+texture = ExtResource( 1 )
+script = null
