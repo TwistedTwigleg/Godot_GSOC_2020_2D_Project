@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://icon.png" type="Texture2D" id=1]
+
+[sub_resource type="SkeletonModification2DTwoBoneIK" id=1]
+target_nodepath = NodePath("../Target")
+target_minimum_distance = 6.0
+joint_one_bone_idx = 0
+joint_one_bone2d_node = NodePath("Bone2D")
+joint_two_bone_idx = 1
+joint_two_bone2d_node = NodePath("Bone2D/Bone2D")
+
+[sub_resource type="SkeletonModificationStack2D" id=2]
+modification_count = 1
+modifications/0 = SubResource( 1 )
+
+[node name="SkeletonModification_Test06" type="Node2D"]
+script = null
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+position = Vector2( 296, 192 )
+modification_stack = SubResource( 2 )
+script = null
+
+[node name="Bone2D" type="Bone2D" parent="Skeleton2D"]
+skew = 4.37114e-08
+rest = Transform2D( 1, 0, -4.37114e-08, 1, 0, 0 )
+script = null
+
+[node name="Bone2D" type="Bone2D" parent="Skeleton2D/Bone2D"]
+position = Vector2( 192, 0 )
+skew = 4.37114e-08
+rest = Transform2D( 1, 0, -4.37114e-08, 1, 96, 0 )
+auto_calculate_length_and_angle = false
+length = 192.0
+bone_angle = 90.0
+script = null
+
+[node name="Sprite2D2" type="Sprite2D" parent="Skeleton2D/Bone2D/Bone2D"]
+self_modulate = Color( 0.537255, 0.890196, 0.45098, 1 )
+position = Vector2( 0, 96 )
+rotation = 1.5708
+scale = Vector2( 3, 0.5 )
+skew = 4.37114e-08
+texture = ExtResource( 1 )
+script = null
+
+[node name="Sprite2D" type="Sprite2D" parent="Skeleton2D/Bone2D"]
+self_modulate = Color( 0.0313726, 0.678431, 0.929412, 1 )
+position = Vector2( 96, 0 )
+scale = Vector2( 3, 0.5 )
+texture = ExtResource( 1 )
+script = null
+
+[node name="Target" type="Sprite2D" parent="."]
+self_modulate = Color( 0.980392, 0.964706, 0.0588235, 1 )
+position = Vector2( 709.788, 391.5 )
+texture = ExtResource( 1 )
+script = null

@@ -1,45 +1,35 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://icon.png" type="Texture2D" id=1]
 
-[sub_resource type="SkeletonModification2DCCDIK" id=1]
+[sub_resource type="SkeletonModification2DJiggle" id=1]
 target_nodepath = NodePath("../Target")
-tip_nodepath = NodePath("Bone2D/Bone2D/Bone2D/Bone2D/Tip")
-ccdik_data_chain_length = 4
+jiggle_data_chain_length = 4
+mass = 1.0
+use_colliders = true
+collision_mask = 1
 joint_data/0/bone_index = 0
 joint_data/0/bone2d_node = NodePath("Bone2D")
-joint_data/0/rotate_from_joint = false
-joint_data/0/enable_constraint = true
-joint_data/0/constraint_angle_min = 270.0
-joint_data/0/constraint_angle_max = 360.0
-joint_data/0/constraint_angle_invert = false
-joint_data/0/constraint_in_localspace = true
+joint_data/0/override_defaults = false
 joint_data/1/bone_index = 1
 joint_data/1/bone2d_node = NodePath("Bone2D/Bone2D")
-joint_data/1/rotate_from_joint = false
-joint_data/1/enable_constraint = true
-joint_data/1/constraint_angle_min = 180.0
-joint_data/1/constraint_angle_max = 360.0
-joint_data/1/constraint_angle_invert = false
-joint_data/1/constraint_in_localspace = true
+joint_data/1/override_defaults = false
 joint_data/2/bone_index = 2
 joint_data/2/bone2d_node = NodePath("Bone2D/Bone2D/Bone2D")
-joint_data/2/rotate_from_joint = false
-joint_data/2/enable_constraint = true
-joint_data/2/constraint_angle_min = 160.0
-joint_data/2/constraint_angle_max = 220.0
-joint_data/2/constraint_angle_invert = false
-joint_data/2/constraint_in_localspace = true
+joint_data/2/override_defaults = false
 joint_data/3/bone_index = 3
-joint_data/3/bone2d_node = NodePath("Bone2D/Bone2D/Bone2D/Bone2D")
-joint_data/3/rotate_from_joint = false
-joint_data/3/enable_constraint = false
+joint_data/3/bone2d_node = NodePath("Bone2D/Bone2D/Bone2D/Bone2D_END")
+joint_data/3/override_defaults = false
 
 [sub_resource type="SkeletonModificationStack2D" id=2]
+execution_mode = 1
 modification_count = 1
 modifications/0 = SubResource( 1 )
 
-[node name="SkeletonModification_Test03" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 32, 32 )
+
+[node name="SkeletonModification_Test05" type="Node2D"]
 script = null
 
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
@@ -84,7 +74,7 @@ skew = 4.37114e-08
 texture = ExtResource( 1 )
 script = null
 
-[node name="Bone2D" type="Bone2D" parent="Skeleton2D/Bone2D/Bone2D/Bone2D"]
+[node name="Bone2D_END" type="Bone2D" parent="Skeleton2D/Bone2D/Bone2D/Bone2D"]
 position = Vector2( 94, 0 )
 skew = 4.37114e-08
 rest = Transform2D( 1, 0, -4.37114e-08, 1, 94, 0 )
@@ -93,7 +83,7 @@ length = 94.0
 bone_angle = 0.0
 script = null
 
-[node name="Sprite2D4" type="Sprite2D" parent="Skeleton2D/Bone2D/Bone2D/Bone2D/Bone2D"]
+[node name="Sprite2D4" type="Sprite2D" parent="Skeleton2D/Bone2D/Bone2D/Bone2D/Bone2D_END"]
 self_modulate = Color( 0.45098, 0.890196, 0.704902, 1 )
 position = Vector2( 46, 0 )
 scale = Vector2( 1.5, 0.5 )
@@ -101,7 +91,7 @@ skew = 4.37114e-08
 texture = ExtResource( 1 )
 script = null
 
-[node name="Tip" type="Position2D" parent="Skeleton2D/Bone2D/Bone2D/Bone2D/Bone2D"]
+[node name="Tip" type="Position2D" parent="Skeleton2D/Bone2D/Bone2D/Bone2D/Bone2D_END"]
 position = Vector2( 96, 0 )
 skew = 4.37114e-08
 script = null
@@ -115,6 +105,48 @@ script = null
 
 [node name="Target" type="Sprite2D" parent="."]
 self_modulate = Color( 0.980392, 0.964706, 0.0588235, 1 )
-position = Vector2( 648.985, 206.385 )
+position = Vector2( 528.044, 550.971 )
 texture = ExtResource( 1 )
+script = null
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 552.416, 190.488 )
+script = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+margin_left = -32.0
+margin_top = -32.0
+margin_right = 32.0
+margin_bottom = 32.0
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 3 )
+script = null
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 161.218, 309.286 )
+script = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D2"]
+margin_left = -32.0
+margin_top = -32.0
+margin_right = 32.0
+margin_bottom = 32.0
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource( 3 )
 script = null
