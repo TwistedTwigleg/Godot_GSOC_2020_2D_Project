@@ -107,6 +107,7 @@ script = null
 
 [node name="BackUpperArm_Polygon2D" type="Polygon2D" parent="Body_Bone2D/BackUpperArm_Bone2D2"]
 skew = 4.37114e-08
+color = Color( 0.784314, 0.784314, 0.784314, 1 )
 offset = Vector2( -878.304, -337.345 )
 texture = ExtResource( 1 )
 polygon = PackedVector2Array( 869.149, 308.932, 891.489, 304.145, 910.106, 317.974, 923.936, 412.655, 916.489, 484.464, 882.979, 495.102, 837.234, 491.911, 826.596, 407.868, 832.447, 349.889, 848.936, 311.591 )
@@ -122,6 +123,7 @@ script = null
 [node name="FrontLowerArm_Polygon2D" type="Polygon2D" parent="Body_Bone2D/BackUpperArm_Bone2D2/BackLowerArm_Bone2D"]
 skew = 4.37114e-08
 z_index = -1
+color = Color( 0.784314, 0.784314, 0.784314, 1 )
 offset = Vector2( -1062.77, -516.559 )
 texture = ExtResource( 1 )
 polygon = PackedVector2Array( 1055.32, 489.783, 1088.3, 506.272, 1060.64, 667.443, 1040.43, 677.549, 1013.83, 670.102, 1014.89, 561.591, 1029.26, 508.4 )
@@ -137,6 +139,7 @@ script = null
 [node name="FrontHand_Polygon2D" type="Polygon2D" parent="Body_Bone2D/BackUpperArm_Bone2D2/BackLowerArm_Bone2D/BackHand_Bone2D"]
 skew = 4.37114e-08
 z_index = -1
+color = Color( 0.784314, 0.784314, 0.784314, 1 )
 offset = Vector2( -1040.27, -710.809 )
 texture = ExtResource( 1 )
 polygon = PackedVector2Array( 1040.96, 688.187, 1071.81, 697.762, 1065.43, 731.272, 1064.89, 752.017, 1068.09, 776.485, 1081.91, 773.826, 1085.11, 784.996, 1070.21, 808.4, 1045.74, 827.549, 1021.81, 817.974, 1010.11, 791.379, 1014.89, 733.4, 1012.77, 706.272, 1022.87, 690.315 )
@@ -230,6 +233,7 @@ script = null
 
 [node name="LegBackUpper_Polygon2D" type="Polygon2D" parent="Hips_Bone2D/LegBackUpper_Bone2D"]
 skew = 4.37114e-08
+color = Color( 0.784314, 0.784314, 0.784314, 1 )
 offset = Vector2( -386.724, -645.85 )
 texture = ExtResource( 1 )
 polygon = PackedVector2Array( 359.113, 609.015, 415.496, 620.185, 445.283, 664.866, 439.234, 761.091, 415.789, 856.307, 387.081, 868.747, 341.627, 856.307, 325.359, 749.608, 334.45, 648.173 )
@@ -245,6 +249,7 @@ script = null
 
 [node name="LegBackLower_Polygon2D" type="Polygon2D" parent="Hips_Bone2D/LegBackUpper_Bone2D/LegBackLower_Bone2D"]
 skew = 4.37114e-08
+color = Color( 0.784314, 0.784314, 0.784314, 1 )
 offset = Vector2( -378.6, -911.795 )
 texture = ExtResource( 1 )
 polygon = PackedVector2Array( 373.684, 876.881, 410.526, 892.67, 433.971, 952.479, 447.368, 1048.17, 437.321, 1118.51, 401.914, 1124.25, 366.507, 1112.29, 354.067, 1034.3, 365.55, 1024.73, 337.799, 902.718 )
@@ -260,6 +265,7 @@ script = null
 
 [node name="FootBack_Polygon2D" type="Polygon2D" parent="Hips_Bone2D/LegBackUpper_Bone2D/LegBackLower_Bone2D/FootBack_Bone2D"]
 skew = 4.37114e-08
+color = Color( 0.784314, 0.784314, 0.784314, 1 )
 offset = Vector2( -416.648, -1188.28 )
 texture = ExtResource( 1 )
 polygon = PackedVector2Array( 392.308, 1166.97, 426.627, 1161.65, 460.947, 1178.81, 462.722, 1235.61, 409.467, 1250.4, 317.16, 1248.04, 313.018, 1210.76 )
