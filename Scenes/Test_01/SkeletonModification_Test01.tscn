@@ -70,6 +70,13 @@ position = Vector2( 540.879, 355.61 )
 texture = ExtResource( 1 )
 script = null
 
+[node name="Test_Node" type="Sprite2D" parent="Target"]
+self_modulate = Color( 0.0313726, 0.678431, 0.929412, 1 )
+position = Vector2( 64, 64 )
+skew = 4.37114e-08
+texture = ExtResource( 1 )
+script = null
+
 [node name="Target2" type="Sprite2D" parent="."]
 self_modulate = Color( 0.537255, 0.890196, 0.45098, 1 )
 position = Vector2( 611.482, 77.6078 )

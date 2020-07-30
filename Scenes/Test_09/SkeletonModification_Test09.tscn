@@ -1,0 +1,193 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://icon.png" type="Texture2D" id=1]
+[ext_resource path="res://Scenes/Test_09/MouseBody.gd" type="Script" id=2]
+
+[sub_resource type="SkeletonModification2DPhysicalBones" id=1]
+physical_bone_chain_length = 3
+joint_0_nodepath = NodePath("PhysicalBone2D_01")
+joint_1_nodepath = NodePath("PhysicalBone2D_01/PhysicalBone2D_02")
+joint_2_nodepath = NodePath("PhysicalBone2D_01/PhysicalBone2D_02/PhysicalBone2D_03")
+
+[sub_resource type="SkeletonModificationStack2D" id=2]
+enabled = true
+modification_count = 1
+modifications/0 = SubResource( 1 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 24, 24 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "Physcs_Test"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Skeleton2D2/PhysicalBone2D_01:simulate_physics")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PackedFloat32Array( 0, 0.5 ),
+"transitions": PackedFloat32Array( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Skeleton2D2/PhysicalBone2D_01/PhysicalBone2D_02:simulate_physics")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PackedFloat32Array( 0, 0.5 ),
+"transitions": PackedFloat32Array( 1, 0.965936 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 16, 16 )
+
+[node name="SkeletonModification_Test09" type="Node2D"]
+script = null
+
+[node name="Skeleton2D2" type="Skeleton2D" parent="."]
+position = Vector2( 616, 288 )
+modification_stack = SubResource( 2 )
+script = null
+
+[node name="TargetBone2D" type="Bone2D" parent="Skeleton2D2"]
+skew = 4.37114e-08
+rest = Transform2D( 1, 0, -4.37114e-08, 1, 540.879, 355.61 )
+auto_calculate_length_and_angle = false
+length = 85.2033
+bone_angle = 45.0
+script = null
+
+[node name="Bone_Sprite" type="Sprite2D" parent="Skeleton2D2/TargetBone2D"]
+self_modulate = Color( 0.0313726, 0.678431, 0.929412, 1 )
+skew = 4.37114e-08
+texture = ExtResource( 1 )
+script = null
+
+[node name="Test_NodeBone2D" type="Bone2D" parent="Skeleton2D2/TargetBone2D"]
+position = Vector2( 56, 56 )
+skew = 4.37114e-08
+rest = Transform2D( 1, 0, -4.37114e-08, 1, 60.879, 59.61 )
+script = null
+
+[node name="Bone_Sprite" type="Sprite2D" parent="Skeleton2D2/TargetBone2D/Test_NodeBone2D"]
+self_modulate = Color( 0.0313726, 0.678431, 0.929412, 1 )
+skew = 4.37114e-08
+texture = ExtResource( 1 )
+script = null
+
+[node name="Test_Node2Bone2D" type="Bone2D" parent="Skeleton2D2/TargetBone2D/Test_NodeBone2D"]
+position = Vector2( 56.0001, 56 )
+skew = 4.37114e-08
+rest = Transform2D( 1, 0, -4.37114e-08, 1, 63.9999, 64 )
+auto_calculate_length_and_angle = false
+length = 46.0
+bone_angle = 0.0
+script = null
+
+[node name="Bone_Sprite" type="Sprite2D" parent="Skeleton2D2/TargetBone2D/Test_NodeBone2D/Test_Node2Bone2D"]
+self_modulate = Color( 0.0313726, 0.678431, 0.929412, 1 )
+skew = 4.37114e-08
+texture = ExtResource( 1 )
+script = null
+
+[node name="PhysicalBone2D_01" type="PhysicalBone2D" parent="Skeleton2D2"]
+visible = false
+skew = 4.37114e-08
+mode = 3
+can_sleep = false
+bone2d_nodepath = NodePath("../TargetBone2D")
+bone2d_index = 0
+auto_configure_joint = false
+script = null
+
+[node name="Visual" type="Sprite2D" parent="Skeleton2D2/PhysicalBone2D_01"]
+self_modulate = Color( 0.929412, 0.0313726, 0.411765, 1 )
+skew = 4.37114e-08
+texture = ExtResource( 1 )
+script = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton2D2/PhysicalBone2D_01"]
+shape = SubResource( 3 )
+script = null
+
+[node name="PhysicalBone2D_02" type="PhysicalBone2D" parent="Skeleton2D2/PhysicalBone2D_01"]
+position = Vector2( 56, 56 )
+skew = 4.37114e-08
+bone2d_nodepath = NodePath("../../TargetBone2D/Test_NodeBone2D")
+bone2d_index = 1
+script = null
+
+[node name="Visual" type="Sprite2D" parent="Skeleton2D2/PhysicalBone2D_01/PhysicalBone2D_02"]
+self_modulate = Color( 0.929412, 0.0313726, 0.411765, 1 )
+skew = 4.37114e-08
+texture = ExtResource( 1 )
+script = null
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Skeleton2D2/PhysicalBone2D_01/PhysicalBone2D_02"]
+position = Vector2( -56, -56 )
+node_a = NodePath("../..")
+node_b = NodePath("..")
+disable_collision = false
+script = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton2D2/PhysicalBone2D_01/PhysicalBone2D_02"]
+shape = SubResource( 3 )
+script = null
+
+[node name="PhysicalBone2D_03" type="PhysicalBone2D" parent="Skeleton2D2/PhysicalBone2D_01/PhysicalBone2D_02"]
+position = Vector2( 56.0002, 56 )
+skew = 4.37114e-08
+bone2d_nodepath = NodePath("../../../TargetBone2D/Test_NodeBone2D/Test_Node2Bone2D")
+bone2d_index = 2
+script = null
+
+[node name="Visual" type="Sprite2D" parent="Skeleton2D2/PhysicalBone2D_01/PhysicalBone2D_02/PhysicalBone2D_03"]
+self_modulate = Color( 0.929412, 0.0313726, 0.411765, 1 )
+skew = 4.37114e-08
+texture = ExtResource( 1 )
+script = null
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Skeleton2D2/PhysicalBone2D_01/PhysicalBone2D_02/PhysicalBone2D_03"]
+position = Vector2( -56.0002, -56 )
+node_a = NodePath("../..")
+node_b = NodePath("..")
+disable_collision = false
+script = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skeleton2D2/PhysicalBone2D_01/PhysicalBone2D_02/PhysicalBone2D_03"]
+shape = SubResource( 3 )
+script = null
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Physcs_Test"
+anims/Physcs_Test = SubResource( 4 )
+script = null
+
+[node name="MouseBody" type="RigidBody2D" parent="."]
+position = Vector2( 512, 376 )
+gravity_scale = 0.0
+continuous_cd = 2
+can_sleep = false
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseBody"]
+skew = 4.37114e-08
+shape = SubResource( 5 )
+script = null
+
+[node name="ColorRect" type="ColorRect" parent="MouseBody"]
+show_behind_parent = true
+margin_left = -16.0
+margin_top = -16.0
+margin_right = 16.0
+margin_bottom = 16.0
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,192 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/GBOT/GBot_pieces.png" type="Texture2D" id=1]
+[ext_resource path="res://icon.png" type="Texture2D" id=2]
+
+[sub_resource type="SkeletonModification2DTwoBoneIK" id=1]
+target_nodepath = NodePath("../BackArm_Target")
+flip_bend_direction = true
+joint_one_bone_idx = 5
+joint_one_bone2d_node = NodePath("BodyBone2D/ArmFarUpperBone2D")
+joint_two_bone_idx = 6
+joint_two_bone2d_node = NodePath("BodyBone2D/ArmFarUpperBone2D/ArmFarLowerBone2D")
+
+[sub_resource type="SkeletonModification2DTwoBoneIK" id=2]
+target_nodepath = NodePath("../FrontArm_Target")
+flip_bend_direction = true
+joint_one_bone_idx = 3
+joint_one_bone2d_node = NodePath("BodyBone2D/ArmCloseUpperBone2D")
+joint_two_bone_idx = 4
+joint_two_bone2d_node = NodePath("BodyBone2D/ArmCloseUpperBone2D/ArmCloseLowerBone2D")
+
+[sub_resource type="SkeletonModificationStack2D" id=3]
+modification_count = 2
+modifications/0 = SubResource( 1 )
+modifications/1 = SubResource( 2 )
+
+[node name="SkeletonModification_Test08" type="Node2D"]
+script = null
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+position = Vector2( 144, 200 )
+scale = Vector2( 0.25, 0.25 )
+modification_stack = SubResource( 3 )
+script = null
+
+[node name="BodyBone2D" type="Bone2D" parent="Skeleton2D"]
+skew = 4.37114e-08
+rest = Transform2D( 1, 0, -4.37114e-08, 1, 431.928, 309.378 )
+script = null
+
+[node name="Body" type="Polygon2D" parent="Skeleton2D/BodyBone2D"]
+skew = 4.37114e-08
+offset = Vector2( -431.928, -309.378 )
+texture = ExtResource( 1 )
+polygon = PackedVector2Array( 441.441, 18.018, 481.982, 27.027, 495.496, 94.5946, 528.829, 172.072, 498.198, 241.441, 490.09, 319.82, 440.541, 360.36, 371.171, 340.541, 325.225, 272.072, 334.234, 160.36, 352.252, 69.3694, 392.793, 28.8288 )
+uv = PackedVector2Array( 441.441, 18.018, 481.982, 27.027, 495.496, 94.5946, 528.829, 172.072, 498.198, 241.441, 490.09, 319.82, 440.541, 360.36, 371.171, 340.541, 325.225, 272.072, 334.234, 160.36, 352.252, 69.3694, 392.793, 28.8288 )
+script = null
+
+[node name="HeadLowerBone2D" type="Bone2D" parent="Skeleton2D/BodyBone2D"]
+position = Vector2( 37.5718, -240.378 )
+skew = 4.37114e-08
+z_index = 1
+rest = Transform2D( 1, 0, 0, 1, 37.5718, -240.378 )
+script = null
+
+[node name="HeadLower" type="Polygon2D" parent="Skeleton2D/BodyBone2D/HeadLowerBone2D"]
+skew = 4.37114e-08
+offset = Vector2( -660.061, -675.836 )
+texture = ExtResource( 1 )
+polygon = PackedVector2Array( 472.072, 568.468, 828.829, 561.261, 801.802, 654.955, 755.856, 681.982, 618.018, 700.901, 522.523, 683.784, 481.982, 648.649 )
+uv = PackedVector2Array( 472.072, 568.468, 828.829, 561.261, 801.802, 654.955, 755.856, 681.982, 618.018, 700.901, 522.523, 683.784, 481.982, 648.649 )
+script = null
+
+[node name="HeadUpperBone2D" type="Bone2D" parent="Skeleton2D/BodyBone2D/HeadLowerBone2D"]
+position = Vector2( 4.23517, -119.296 )
+skew = 4.37114e-08
+rest = Transform2D( 1, 0, 0, 1, 4.23517, -119.296 )
+auto_calculate_length_and_angle = false
+length = 207.0
+bone_angle = -86.22
+script = null
+
+[node name="HeadUpper" type="Polygon2D" parent="Skeleton2D/BodyBone2D/HeadLowerBone2D/HeadUpperBone2D"]
+skew = 4.37114e-08
+offset = Vector2( -673.735, -469.704 )
+texture = ExtResource( 1 )
+polygon = PackedVector2Array( 487.387, 500, 538.739, 532.432, 660.36, 544.144, 803.604, 522.523, 834.234, 440.541, 811.712, 300.901, 711.712, 236.937, 577.477, 250.45, 498.198, 331.532, 459.459, 427.027 )
+uv = PackedVector2Array( 487.387, 500, 538.739, 532.432, 660.36, 544.144, 803.604, 522.523, 834.234, 440.541, 811.712, 300.901, 711.712, 236.937, 577.477, 250.45, 498.198, 331.532, 459.459, 427.027 )
+script = null
+
+[node name="ArmCloseUpperBone2D" type="Bone2D" parent="Skeleton2D/BodyBone2D"]
+position = Vector2( -87.74, -173.137 )
+skew = 4.37114e-08
+z_index = 2
+rest = Transform2D( 1, 0, 0, 1, -87.74, -173.137 )
+script = null
+
+[node name="ArmCloseUpper" type="Polygon2D" parent="Skeleton2D/BodyBone2D/ArmCloseUpperBone2D"]
+skew = 4.37114e-08
+offset = Vector2( -94.9191, -91.234 )
+texture = ExtResource( 1 )
+polygon = PackedVector2Array( 134.574, 43.0851, 116.489, 132.447, 91.4893, 191.489, 76.5957, 207.979, 61.1702, 209.043, 46.8085, 201.596, 28.1915, 187.766, 23.4042, 55.8511, 34.5745, 5.31915, 97.3404, 12.766 )
+uv = PackedVector2Array( 134.574, 43.0851, 116.489, 132.447, 91.4893, 191.489, 76.5957, 207.979, 61.1702, 209.043, 46.8085, 201.596, 28.1915, 187.766, 23.4042, 55.8511, 34.5745, 5.31915, 97.3404, 12.766 )
+script = null
+
+[node name="ArmCloseLowerBone2D" type="Bone2D" parent="Skeleton2D/BodyBone2D/ArmCloseUpperBone2D"]
+position = Vector2( -28.208, 97.676 )
+skew = 4.37114e-08
+rest = Transform2D( 1, 0, 0, 1, -28.208, 97.676 )
+auto_calculate_length_and_angle = false
+length = 165.0
+bone_angle = 86.01
+script = null
+
+[node name="ArmCloseLower" type="Polygon2D" parent="Skeleton2D/BodyBone2D/ArmCloseUpperBone2D/ArmCloseLowerBone2D"]
+skew = 4.37114e-08
+offset = Vector2( -67.8303, -188.36 )
+texture = ExtResource( 1 )
+polygon = PackedVector2Array( 116.614, 258.621, 135.423, 303.762, 136.05, 335.11, 105.643, 362.382, 62.6959, 366.144, 27.5862, 327.586, 18.4953, 226.019, 33.3333, 188.041, 43.3779, 171.446, 55.7716, 165.128, 70.5954, 164.034, 84.6902, 170.231, 92.5881, 181.045, 117.139, 212.551 )
+uv = PackedVector2Array( 116.614, 258.621, 135.423, 303.762, 136.05, 335.11, 105.643, 362.382, 62.6959, 366.144, 27.5862, 327.586, 18.4953, 226.019, 33.3333, 188.041, 43.3779, 171.446, 55.7716, 165.128, 70.5954, 164.034, 84.6902, 170.231, 92.5881, 181.045, 117.139, 212.551 )
+script = null
+
+[node name="ArmFarUpperBone2D" type="Bone2D" parent="Skeleton2D/BodyBone2D"]
+position = Vector2( 75.591, -185.655 )
+skew = 4.37114e-08
+rest = Transform2D( 1, 0, 0, 1, 75.591, -185.655 )
+script = null
+
+[node name="ArmFarUpper" type="Polygon2D" parent="Skeleton2D/BodyBone2D/ArmFarUpperBone2D"]
+skew = 4.37114e-08
+z_index = -1
+offset = Vector2( -223.27, -95.6862 )
+texture = ExtResource( 1 )
+polygon = PackedVector2Array( 188.502, 40.7666, 231.359, 27.1777, 276.307, 45.993, 267.944, 153.31, 241.481, 199.259, 229.074, 211.667, 213.519, 215.741, 199.815, 207.593, 184.444, 192.222, 175.556, 112.593, 176.296, 46.4815 )
+uv = PackedVector2Array( 188.502, 40.7666, 231.359, 27.1777, 276.307, 45.993, 267.944, 153.31, 241.481, 199.259, 229.074, 211.667, 213.519, 215.741, 199.815, 207.593, 184.444, 192.222, 175.556, 112.593, 176.296, 46.4815 )
+script = null
+
+[node name="ArmFarLowerBone2D" type="Bone2D" parent="Skeleton2D/BodyBone2D/ArmFarUpperBone2D"]
+position = Vector2( -6.62802, 99.001 )
+skew = 4.37114e-08
+rest = Transform2D( 1, 0, 0, 1, -6.62802, 99.001 )
+auto_calculate_length_and_angle = false
+length = 155.0
+bone_angle = 78.54
+script = null
+
+[node name="ArmFarLower" type="Polygon2D" parent="Skeleton2D/BodyBone2D/ArmFarUpperBone2D/ArmFarLowerBone2D"]
+skew = 4.37114e-08
+z_index = -1
+offset = Vector2( -216.642, -194.688 )
+texture = ExtResource( 1 )
+polygon = PackedVector2Array( 290.585, 310.305, 277.863, 343.639, 234.097, 357.379, 197.964, 340.331, 173.282, 243.13, 186.005, 195.293, 203.498, 176.852, 218.724, 172.119, 233.951, 178.704, 272.428, 209.774 )
+uv = PackedVector2Array( 290.585, 310.305, 277.863, 343.639, 234.097, 357.379, 197.964, 340.331, 173.282, 243.13, 186.005, 195.293, 203.498, 176.852, 218.724, 172.119, 233.951, 178.704, 272.428, 209.774 )
+script = null
+
+[node name="LegCloseBone2D" type="Bone2D" parent="Skeleton2D/BodyBone2D"]
+position = Vector2( -57.19, 17.653 )
+skew = 4.37114e-08
+rest = Transform2D( 1, 0, 0, 1, -57.19, 17.653 )
+auto_calculate_length_and_angle = false
+length = 260.0
+bone_angle = 90.0
+script = null
+
+[node name="LegClose" type="Polygon2D" parent="Skeleton2D/BodyBone2D/LegCloseBone2D"]
+skew = 4.37114e-08
+offset = Vector2( -90.4893, -418.995 )
+texture = ExtResource( 1 )
+polygon = PackedVector2Array( 65.9575, 388.762, 108.511, 387.698, 128.191, 404.72, 112.766, 536.635, 160.106, 598.869, 190.426, 673.869, 170.213, 695.145, 22.3404, 691.954, 15.9574, 652.592, 26.5957, 501.528, 54.2553, 468.018 )
+uv = PackedVector2Array( 65.9575, 388.762, 108.511, 387.698, 128.191, 404.72, 112.766, 536.635, 160.106, 598.869, 190.426, 673.869, 170.213, 695.145, 22.3404, 691.954, 15.9574, 652.592, 26.5957, 501.528, 54.2553, 468.018 )
+script = null
+
+[node name="LegFarBone2D" type="Bone2D" parent="Skeleton2D/BodyBone2D"]
+position = Vector2( 38.651, 0.731018 )
+skew = 4.37114e-08
+rest = Transform2D( 1, 0, 0, 1, 38.651, 0.731018 )
+auto_calculate_length_and_angle = false
+length = 260.0
+bone_angle = 90.0
+script = null
+
+[node name="LegFar" type="Polygon2D" parent="Skeleton2D/BodyBone2D/LegFarBone2D"]
+skew = 4.37114e-08
+z_index = -1
+offset = Vector2( -312.465, -415.527 )
+texture = ExtResource( 1 )
+polygon = PackedVector2Array( 286.17, 388.23, 317.021, 385.571, 345.745, 396.741, 338.83, 556.315, 393.085, 617.486, 413.298, 684.507, 400.532, 702.06, 237.766, 691.422, 245.745, 504.188, 277.66, 468.018 )
+uv = PackedVector2Array( 286.17, 388.23, 317.021, 385.571, 345.745, 396.741, 338.83, 556.315, 393.085, 617.486, 413.298, 684.507, 400.532, 702.06, 237.766, 691.422, 245.745, 504.188, 277.66, 468.018 )
+script = null
+
+[node name="BackArm_Target" type="Sprite2D" parent="."]
+position = Vector2( 239.294, 166.694 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 2 )
+script = null
+
+[node name="FrontArm_Target" type="Sprite2D" parent="."]
+self_modulate = Color( 0.792747, 0.90625, 0.141602, 1 )
+position = Vector2( 234.514, 201.309 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 2 )
+script = null
