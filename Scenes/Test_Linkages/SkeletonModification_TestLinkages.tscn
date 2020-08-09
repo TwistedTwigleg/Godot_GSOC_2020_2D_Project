@@ -1,0 +1,151 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/Test_Linkages/Crank_LookAt.tres" type="SkeletonModification2DLookAt" id=1]
+[ext_resource path="res://icon.png" type="Texture2D" id=2]
+[ext_resource path="res://Assets/Linkages/rotational_joint.png" type="Texture2D" id=3]
+
+[sub_resource type="SkeletonModificationStack2D" id=1]
+enabled = true
+modification_count = 1
+modifications/0 = ExtResource( 1 )
+
+[sub_resource type="SkeletonModification2DFABRIK" id=2]
+target_nodepath = NodePath("../Quadrilateral_Target")
+fabrik_data_chain_length = 2
+joint_data/0/bone_index = 0
+joint_data/0/bone2d_node = NodePath("Bone2D_A0A")
+joint_data/0/enable_constraint = false
+joint_data/1/bone_index = 1
+joint_data/1/bone2d_node = NodePath("Bone2D_A0A/Bone2D")
+joint_data/1/magnet_position = Vector2( 0, 0 )
+joint_data/1/use_target_rotation = false
+joint_data/1/enable_constraint = false
+
+[sub_resource type="SkeletonModification2DLookAt" id=3]
+bone_index = 2
+bone2d_node = NodePath("Bone2D_B0B")
+target_nodepath = NodePath("../Quadrilateral_Target")
+
+[sub_resource type="SkeletonModificationStack2D" id=4]
+enabled = true
+modification_count = 2
+modifications/0 = SubResource( 2 )
+modifications/1 = SubResource( 3 )
+
+[node name="SkeletonModification_TestLinkages" type="Node2D"]
+script = null
+
+[node name="Explanation" type="Label" parent="."]
+margin_left = 11.0
+margin_top = 513.0
+margin_right = 1011.0
+margin_bottom = 595.0
+text = "Kinematic chains are commonly found as linkages in machines. A linkage is a collection of links connected by joints. Generally, the links are the structural elements and the joints allow movement. The difference to kinematic chains in skeletons is the fact that linkages are closed chains which have only one degree of freedom. Closed chains are only a combination of multiple open chains which connect to common links (mostly the frame) so that this is generating a loop in the kinematic chain. The two most often discussed linkages are the four-bar linkages and their main representatives: the planar quadrilateral linkage and the slider-crank linkage."
+align = 3
+autowrap = true
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Crank" type="Skeleton2D" parent="."]
+position = Vector2( 90.4063, 71.5322 )
+modification_stack = SubResource( 1 )
+script = null
+
+[node name="Joint" type="Sprite2D" parent="Crank"]
+scale = Vector2( 0.07, 0.07 )
+skew = 4.37114e-08
+texture = ExtResource( 3 )
+script = null
+
+[node name="Bone2D" type="Bone2D" parent="Crank"]
+skew = 4.37114e-08
+rest = Transform2D( 100, 100, 0, 0, 0, 0 )
+auto_calculate_length_and_angle = false
+length = 100.0
+bone_angle = 0.0
+script = null
+__meta__ = {
+"_local_pose_override_enabled_": true
+}
+
+[node name="Line2D" type="Line2D" parent="Crank/Bone2D"]
+z_index = -1
+points = PackedVector2Array( 0, 0, 100, 0 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+script = null
+
+[node name="Planar_Quadrilateral_Linkage" type="Skeleton2D" parent="."]
+position = Vector2( 201.192, 375.328 )
+skew = 4.37114e-08
+modification_stack = SubResource( 4 )
+script = null
+
+[node name="FixedJoint_A0" type="Sprite2D" parent="Planar_Quadrilateral_Linkage"]
+skew = 4.37114e-08
+script = null
+
+[node name="Bone2D_A0A" type="Bone2D" parent="Planar_Quadrilateral_Linkage"]
+skew = 4.37114e-08
+rest = Transform2D( 50, -50, 0, 0, 0, 0 )
+script = null
+
+[node name="Line2D" type="Line2D" parent="Planar_Quadrilateral_Linkage/Bone2D_A0A"]
+points = PackedVector2Array( 0, 0, 50, -50 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+script = null
+
+[node name="Bone2D_AB" type="Bone2D" parent="Planar_Quadrilateral_Linkage/Bone2D_A0A"]
+position = Vector2( 50, -50 )
+skew = 4.37114e-08
+rest = Transform2D( 200, 0, 0, 0, 0, 0 )
+auto_calculate_length_and_angle = false
+length = 200.0
+bone_angle = 0.0
+script = null
+
+[node name="Line2D" type="Line2D" parent="Planar_Quadrilateral_Linkage/Bone2D_A0A/Bone2D_AB"]
+points = PackedVector2Array( 0, 0, 200, 0 )
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+script = null
+
+[node name="Bone2D_B0B" type="Bone2D" parent="Planar_Quadrilateral_Linkage"]
+position = Vector2( 145.336, 56.9357 )
+skew = 4.37114e-08
+rest = Transform2D( 150, 0, 0, 0, 0, 0 )
+auto_calculate_length_and_angle = false
+length = 150.0
+bone_angle = -45.0
+script = null
+__meta__ = {
+"_local_pose_override_enabled_": true
+}
+
+[node name="Slider_Crank_Linkage" type="Skeleton2D" parent="."]
+position = Vector2( 677.74, 373.085 )
+skew = 4.37114e-08
+script = null
+
+[node name="Crank_Target" type="Sprite2D" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 190.406, 71.5322 )
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 2 )
+script = null
+
+[node name="Quadrilateral_Target" type="Sprite2D" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 454.669, 324.642 )
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 2 )
+script = null
