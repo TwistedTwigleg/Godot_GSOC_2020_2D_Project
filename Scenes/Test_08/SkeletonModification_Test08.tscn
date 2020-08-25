@@ -179,14 +179,14 @@ uv = PackedVector2Array( 286.17, 388.23, 317.021, 385.571, 345.745, 396.741, 338
 script = null
 
 [node name="BackArm_Target" type="Sprite2D" parent="."]
-position = Vector2( 239.294, 166.694 )
+position = Vector2( 202.878, 125.682 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 2 )
 script = null
 
 [node name="FrontArm_Target" type="Sprite2D" parent="."]
 self_modulate = Color( 0.792747, 0.90625, 0.141602, 1 )
-position = Vector2( 234.514, 201.309 )
+position = Vector2( 111.124, 209.794 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 2 )
 script = null

@@ -7,9 +7,9 @@ bone_index = 0
 bone2d_node = NodePath("Bone2D")
 target_nodepath = NodePath("../Target")
 enable_constraint = true
+constraint_angle_min = 0.0
 constraint_angle_max = 180.0
-enable_constraint = true
-constraint_angle_max = 180.0
+constraint_angle_invert = false
 constraint_in_localspace = true
 
 [sub_resource type="SkeletonModification2DLookAt" id=2]
@@ -19,9 +19,7 @@ target_nodepath = NodePath("../Target2")
 enable_constraint = true
 constraint_angle_min = 180.0
 constraint_angle_max = 360.0
-enable_constraint = true
-constraint_angle_min = 180.0
-constraint_angle_max = 360.0
+constraint_angle_invert = false
 constraint_in_localspace = false
 
 [sub_resource type="SkeletonModificationStack2D" id=3]

@@ -5,21 +5,6 @@ export (SkeletonModification2DPhysicalBones) var physics_mod : SkeletonModificat
 var is_simulating = false;
 
 func _ready():
-	# Set using modification stack.
-	"""
-	var mod_stack = get_modification_stack();
-	for mod_index in mod_stack.modification_count:
-		var mod = mod_stack.get_modification(mod_index);
-		if (mod is SkeletonModification2DPhysicalBones):
-			mod.start_simulation([]);
-	"""
-	
-	# Set using export
-	#physics_mod.start_simulation();
-	
-	# Set using animation player
-	# get_parent().get_node("AnimationPlayer").play("Physcs_Test");
-	
 	pass;
 
 func _process(delta):

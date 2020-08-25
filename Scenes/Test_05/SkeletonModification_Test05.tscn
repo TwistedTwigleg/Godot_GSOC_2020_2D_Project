@@ -3,6 +3,7 @@
 [ext_resource path="res://icon.png" type="Texture2D" id=1]
 
 [sub_resource type="SkeletonModification2DJiggle" id=1]
+execution_mode = 1
 target_nodepath = NodePath("../Target")
 jiggle_data_chain_length = 4
 mass = 1.0
@@ -22,7 +23,6 @@ joint_data/3/bone2d_node = NodePath("Bone2D/Bone2D/Bone2D/Bone2D_END")
 joint_data/3/override_defaults = false
 
 [sub_resource type="SkeletonModificationStack2D" id=2]
-execution_mode = 1
 modification_count = 1
 modifications/0 = SubResource( 1 )
 
@@ -105,7 +105,7 @@ script = null
 
 [node name="Target" type="Sprite2D" parent="."]
 self_modulate = Color( 0.980392, 0.964706, 0.0588235, 1 )
-position = Vector2( 528.044, 550.971 )
+position = Vector2( 631.044, 565.971 )
 texture = ExtResource( 1 )
 script = null
 

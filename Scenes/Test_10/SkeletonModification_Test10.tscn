@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Test_10/GDScript_SpringModificatino2D.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture2D" id=2]
+
+[sub_resource type="SkeletonModification2D" id=1]
+script = ExtResource( 1 )
+bone_index = 0
+path_to_target = NodePath("Expand_One")
+
+[sub_resource type="SkeletonModification2D" id=2]
+script = ExtResource( 1 )
+bone_index = 1
+path_to_target = NodePath("Expand_Two")
+
+[sub_resource type="SkeletonModificationStack2D" id=3]
+enabled = true
+modification_count = 2
+modifications/0 = SubResource( 1 )
+modifications/1 = SubResource( 2 )
+
+[node name="SkeletonModification_Test10" type="Node2D"]
+script = null
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+position = Vector2( 200, 288 )
+modification_stack = SubResource( 3 )
+script = null
+
+[node name="Bone_One" type="Bone2D" parent="Skeleton2D"]
+skew = 4.37114e-08
+rest = Transform2D( 1, 0, -4.37114e-08, 1, 0, 0 )
+auto_calculate_length_and_angle = false
+length = 190.0
+bone_angle = 0.0
+script = null
+
+[node name="Bone_Sprite" type="Sprite2D" parent="Skeleton2D/Bone_One"]
+self_modulate = Color( 0.0313726, 0.678431, 0.929412, 1 )
+position = Vector2( 93, 0 )
+scale = Vector2( 3, 0.5 )
+skew = 4.37114e-08
+texture = ExtResource( 2 )
+script = null
+
+[node name="Bone_Two" type="Bone2D" parent="Skeleton2D/Bone_One"]
+position = Vector2( 190, 0 )
+skew = 4.37114e-08
+rest = Transform2D( 1, 0, -4.37114e-08, 1, 192, 0 )
+auto_calculate_length_and_angle = false
+length = 192.0
+bone_angle = 0.0
+script = null
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Bone_Sprite" type="Sprite2D" parent="Skeleton2D/Bone_One/Bone_Two"]
+self_modulate = Color( 0.0313726, 0.678431, 0.929412, 1 )
+position = Vector2( 96, 0 )
+scale = Vector2( 3, 0.5 )
+skew = 4.37114e-08
+texture = ExtResource( 2 )
+script = null
+
+[node name="Expand_One" type="Position2D" parent="Skeleton2D"]
+position = Vector2( 190, 0 )
+skew = 4.37114e-08
+script = null
+
+[node name="Expand_Two" type="Position2D" parent="Skeleton2D"]
+position = Vector2( 382, 0 )
+skew = 4.37114e-08
+script = null

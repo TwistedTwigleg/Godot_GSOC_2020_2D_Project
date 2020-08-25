@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "SkeletonModification2D",
+"class": @"SkeletonModification2DSpring",
+"language": @"GDScript",
+"path": "res://Scenes/Test_10/GDScript_SpringModificatino2D.gd"
+} ]
 _global_script_class_icons={
-
+@"SkeletonModification2DSpring": ""
 }
 
 [application]
