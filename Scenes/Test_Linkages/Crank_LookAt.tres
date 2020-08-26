@@ -3,4 +3,3 @@
 [resource]
 bone_index = 0
 bone2d_node = NodePath("Bone2D")
-target_nodepath = NodePath("../Crank_Target")

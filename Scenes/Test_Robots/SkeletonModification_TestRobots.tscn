@@ -1,0 +1,4 @@
+[gd_scene format=2]
+
+[node name="SkeletonModification_TestRobots" type="Node2D"]
+script = null
