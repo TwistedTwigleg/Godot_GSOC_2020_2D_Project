@@ -1,10 +1,10 @@
-tool
+@tool
 extends SkeletonModification2D
 class_name SkeletonModification2DSpring
 
-export (int) var bone_index = 0;
+@export var bone_index:int = 0;
 
-export (NodePath) var path_to_target;
+@export var path_to_target:NodePath;
 var _target;
 
 # Called when the node enters the scene tree for the first time.

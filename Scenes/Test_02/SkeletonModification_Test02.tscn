@@ -8,7 +8,6 @@ bone2d_node = NodePath("Bone2D/Bone2D")
 target_nodepath = NodePath("../Target")
 
 [sub_resource type="SkeletonModificationStack2D" id=2]
-strength = 1.0
 modification_count = 1
 modifications/0 = SubResource( 1 )
 

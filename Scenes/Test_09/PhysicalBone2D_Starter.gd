@@ -1,11 +1,12 @@
 extends Skeleton2D
 
-export (SkeletonModification2DPhysicalBones) var physics_mod : SkeletonModification2DPhysicalBones;
+#@export var physics_mod:SkeletonModification2DPhysicalBones;
+var physics_mod:SkeletonModification2DPhysicalBones;
 
 var is_simulating = false;
 
 func _ready():
-	pass;
+	physics_mod = get_modification_stack().get_modification(0) as SkeletonModification2DPhysicalBones;
 
 func _process(delta):
 	if (Input.is_action_just_pressed("ui_accept")):

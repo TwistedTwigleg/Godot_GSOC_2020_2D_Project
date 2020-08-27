@@ -14,7 +14,6 @@ bone_index = 1
 path_to_target = NodePath("Expand_Two")
 
 [sub_resource type="SkeletonModificationStack2D" id=3]
-enabled = true
 modification_count = 2
 modifications/0 = SubResource( 1 )
 modifications/1 = SubResource( 2 )
@@ -64,7 +63,7 @@ texture = ExtResource( 2 )
 script = null
 
 [node name="Expand_One" type="Position2D" parent="Skeleton2D"]
-position = Vector2( 190, 0 )
+position = Vector2( 190, -80 )
 skew = 4.37114e-08
 script = null
 
