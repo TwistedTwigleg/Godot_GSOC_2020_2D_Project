@@ -1,5 +1,0 @@
-[gd_resource type="SkeletonModification2DLookAt" format=2]
-
-[resource]
-bone_index = 0
-bone2d_node = NodePath("Bone2D")
