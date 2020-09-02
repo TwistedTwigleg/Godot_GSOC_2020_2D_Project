@@ -1,7 +1,7 @@
 extends Position2D
 
-export(NodePath) var tip_node 
-onready var active = false
+@export var tip_node: NodePath
+@onready var active = false
 
 func _process(delta):
 	if active:
@@ -18,5 +18,7 @@ func _on_Tip_input_event(viewport, event, shape_idx):
 	print(event)
 	if event is InputEventMouseButton and event.is_pressed():
 		print("Pressed")
-		self.position = get_node(tip_node).global_position
+		# A little hack to get around the NodePath problem:
+		#self.position = get_node(tip_node).global_position
+		self.position = get_parent().get_node("Crank/Bone2D/Tip").global_position
 		active = true
