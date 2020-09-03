@@ -8,12 +8,8 @@ var tip_node: NodePath
 ### HACK
 func _ready():
 	print(self.name)
-	if self.name == "Crank_Target":
-		tip_node = NodePath("Crank/Bone2D/Tip")
-	elif self.name == "Crank_Rocker_Target_1":
-		tip_node = NodePath("Crank_Rocker_1/Bone2D_A0A/Tip")
-	elif self.name == "Crank_Rocker_Target_2":
-		tip_node = NodePath("Crank_Rocker_2/Bone2D_B0B/Tip")
+	if self.name == "RR_Robot_FABRIK_Target":
+		tip_node = NodePath("RR_Robot_FABRIK/Bone2D_A0A/Bone2D_AB/Tip")
 ### END OF HACK
 
 func _process(delta):
