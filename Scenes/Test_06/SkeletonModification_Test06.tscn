@@ -4,12 +4,14 @@
 
 [sub_resource type="SkeletonModification2DTwoBoneIK" id=1]
 target_nodepath = NodePath("../Target")
+target_minimum_distance = 0.0
 joint_one_bone_idx = 0
 joint_one_bone2d_node = NodePath("Bone2D")
 joint_two_bone_idx = 1
 joint_two_bone2d_node = NodePath("Bone2D/Bone2D")
 
 [sub_resource type="SkeletonModificationStack2D" id=2]
+enabled = true
 modification_count = 1
 modifications/0 = SubResource( 1 )
 
@@ -25,6 +27,9 @@ script = null
 skew = 4.37114e-08
 rest = Transform2D( 1, 0, -4.37114e-08, 1, 0, 0 )
 script = null
+__meta__ = {
+"_local_pose_override_enabled_": true
+}
 
 [node name="Bone2D" type="Bone2D" parent="Skeleton2D/Bone2D"]
 position = Vector2( 136, 136 )
@@ -34,6 +39,9 @@ auto_calculate_length_and_angle = false
 length = 192.0
 bone_angle = 90.0
 script = null
+__meta__ = {
+"_local_pose_override_enabled_": true
+}
 
 [node name="Sprite2D2" type="Sprite2D" parent="Skeleton2D/Bone2D/Bone2D"]
 self_modulate = Color( 0.537255, 0.890196, 0.45098, 1 )
@@ -55,6 +63,6 @@ script = null
 
 [node name="Target" type="Sprite2D" parent="."]
 self_modulate = Color( 0.980392, 0.964706, 0.0588235, 1 )
-position = Vector2( 709.788, 391.5 )
+position = Vector2( 584.495, 271.252 )
 texture = ExtResource( 1 )
 script = null

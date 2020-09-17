@@ -11,6 +11,10 @@ var _target;
 func _ready():
 	pass # Replace with function body.
 
+func setup_modification(modification_stack):
+	# Testing drawing gizmos in the editor.
+	set_editor_draw_gizmo(true);
+
 func execute(delta):
 	if (enabled == false):
 		return;
@@ -52,3 +56,12 @@ func execute(delta):
 			get_modification_stack().get_skeleton().set_bone_local_pose_override(
 				child_index, child_bone.transform, get_modification_stack().strength, true
 			);
+
+func draw_editor_gizmo():
+	var skeleton = get_modification_stack().get_skeleton();
+	var operation_bone = get_modification_stack().get_skeleton().get_bone(bone_index);
+	if operation_bone == null:
+		return;
+	
+	skeleton.draw_set_transform(skeleton.get_global_transform().affine_inverse().xform(operation_bone.get_global_position()));
+	skeleton.draw_circle(Vector2.ZERO, operation_bone.get_length(), Color8(255, 0, 0, 40));
