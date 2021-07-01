@@ -20,15 +20,19 @@ fabrik_data_chain_length = 3
 joint_data/0/bone_index = 3
 joint_data/0/bone2d_node = NodePath("Body_Bone2D/FrontUpperArm_Bone2D")
 joint_data/0/enable_constraint = false
+joint_data/0/editor_draw_gizmo = true
 joint_data/1/bone_index = 4
 joint_data/1/bone2d_node = NodePath("Body_Bone2D/FrontUpperArm_Bone2D/FrontLowerArm_Bone2D")
 joint_data/1/magnet_position = Vector2( 0, 0 )
 joint_data/1/enable_constraint = false
+joint_data/1/editor_draw_gizmo = true
 joint_data/2/bone_index = 5
 joint_data/2/bone2d_node = NodePath("Body_Bone2D/FrontUpperArm_Bone2D/FrontLowerArm_Bone2D/FrontHand_Bone2D")
 joint_data/2/magnet_position = Vector2( 0, 0 )
-joint_data/2/use_target_rotation = false
+joint_data/2/use_target_rotation = true
 joint_data/2/enable_constraint = false
+joint_data/2/editor_draw_gizmo = true
+editor/draw_gizmo = false
 
 [sub_resource type="SkeletonModificationStack2D" id=3]
 modification_count = 2
@@ -239,11 +243,11 @@ scale = Vector2( 0.5, 0.5 )
 modification_stack = SubResource( 3 )
 
 [node name="Body_Bone2D" parent="Skeleton2D" index="0"]
-scale = Vector2( 0.999921, 0.999923 )
+scale = Vector2( 0.999907, 0.999911 )
 
 [node name="FrontUpperArm_Bone2D" parent="Skeleton2D/Body_Bone2D" index="2"]
-scale = Vector2( 0.999958, 0.999961 )
-skew = -1.09235e-05
+position = Vector2( 40.0165, -185.982 )
+scale = Vector2( 0.999953, 0.999952 )
 
 [node name="FrontLowerArm_Bone2D" parent="Skeleton2D/Body_Bone2D/FrontUpperArm_Bone2D" index="1"]
 auto_calculate_length_and_angle = false
@@ -252,25 +256,25 @@ bone_angle = 100.448
 
 [node name="BackUpperArm_Bone2D2" parent="Skeleton2D/Body_Bone2D" index="3"]
 scale = Vector2( 0.999971, 0.999975 )
-skew = -1.00891e-05
+skew = -1.03275e-05
 
 [node name="LegFrontUpper_Bone2D" parent="Skeleton2D/Hips_Bone2D" index="1"]
-scale = Vector2( 0.999975, 0.999973 )
+scale = Vector2( 0.999965, 0.999964 )
 
 [node name="LegFrontLower_Bone2D" parent="Skeleton2D/Hips_Bone2D/LegFrontUpper_Bone2D" index="1"]
-scale = Vector2( 0.999971, 0.999969 )
+scale = Vector2( 0.99996, 0.999957 )
 
 [node name="FootFront_Bone2D" parent="Skeleton2D/Hips_Bone2D/LegFrontUpper_Bone2D/LegFrontLower_Bone2D" index="1"]
-scale = Vector2( 0.999974, 0.999972 )
+scale = Vector2( 0.999965, 0.999961 )
 
 [node name="LegBackUpper_Bone2D" parent="Skeleton2D/Hips_Bone2D" index="2"]
-scale = Vector2( 0.999973, 0.999973 )
+scale = Vector2( 0.999963, 0.999962 )
 
 [node name="LegBackLower_Bone2D" parent="Skeleton2D/Hips_Bone2D/LegBackUpper_Bone2D" index="1"]
-scale = Vector2( 0.999976, 0.999974 )
+scale = Vector2( 0.999963, 0.999964 )
 
 [node name="FootBack_Bone2D" parent="Skeleton2D/Hips_Bone2D/LegBackUpper_Bone2D/LegBackLower_Bone2D" index="1"]
-scale = Vector2( 0.999975, 0.999973 )
+scale = Vector2( 0.999964, 0.999962 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Skeleton2D"]
 anims/Test_Anim_01 = SubResource( 4 )
@@ -279,7 +283,7 @@ anims/Test_Anim_03 = SubResource( 6 )
 script = null
 
 [node name="Head_Target" type="Sprite2D" parent="."]
-position = Vector2( 249.515, 99.604 )
+position = Vector2( 320.685, 81.7984 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 script = null
@@ -287,6 +291,7 @@ script = null
 [node name="FrontArm_Target" type="Sprite2D" parent="."]
 self_modulate = Color( 0.792747, 0.90625, 0.141602, 1 )
 position = Vector2( 354.518, 186.735 )
+rotation = -2.61799
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 1 )
 script = null

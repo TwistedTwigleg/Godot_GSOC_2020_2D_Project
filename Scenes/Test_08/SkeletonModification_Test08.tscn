@@ -20,6 +20,7 @@ joint_two_bone_idx = 4
 joint_two_bone2d_node = NodePath("BodyBone2D/ArmCloseUpperBone2D/ArmCloseLowerBone2D")
 
 [sub_resource type="SkeletonModificationStack2D" id=3]
+enabled = true
 modification_count = 2
 modifications/0 = SubResource( 1 )
 modifications/1 = SubResource( 2 )
@@ -36,6 +37,7 @@ script = null
 [node name="BodyBone2D" type="Bone2D" parent="Skeleton2D"]
 skew = 4.37114e-08
 rest = Transform2D( 1, 0, -4.37114e-08, 1, 431.928, 309.378 )
+editor_settings/show_bone_gizmo = false
 script = null
 
 [node name="Body" type="Polygon2D" parent="Skeleton2D/BodyBone2D"]
@@ -51,6 +53,7 @@ position = Vector2( 37.5718, -240.378 )
 skew = 4.37114e-08
 z_index = 1
 rest = Transform2D( 1, 0, 0, 1, 37.5718, -240.378 )
+editor_settings/show_bone_gizmo = false
 script = null
 
 [node name="HeadLower" type="Polygon2D" parent="Skeleton2D/BodyBone2D/HeadLowerBone2D"]
@@ -68,6 +71,7 @@ rest = Transform2D( 1, 0, 0, 1, 4.23517, -119.296 )
 auto_calculate_length_and_angle = false
 length = 207.0
 bone_angle = -86.22
+editor_settings/show_bone_gizmo = false
 script = null
 
 [node name="HeadUpper" type="Polygon2D" parent="Skeleton2D/BodyBone2D/HeadLowerBone2D/HeadUpperBone2D"]
@@ -83,7 +87,11 @@ position = Vector2( -87.74, -173.137 )
 skew = 4.37114e-08
 z_index = 2
 rest = Transform2D( 1, 0, 0, 1, -87.74, -173.137 )
+editor_settings/show_bone_gizmo = false
 script = null
+__meta__ = {
+"_local_pose_override_enabled_": true
+}
 
 [node name="ArmCloseUpper" type="Polygon2D" parent="Skeleton2D/BodyBone2D/ArmCloseUpperBone2D"]
 skew = 4.37114e-08
@@ -100,7 +108,11 @@ rest = Transform2D( 1, 0, 0, 1, -28.208, 97.676 )
 auto_calculate_length_and_angle = false
 length = 165.0
 bone_angle = 86.01
+editor_settings/show_bone_gizmo = false
 script = null
+__meta__ = {
+"_local_pose_override_enabled_": true
+}
 
 [node name="ArmCloseLower" type="Polygon2D" parent="Skeleton2D/BodyBone2D/ArmCloseUpperBone2D/ArmCloseLowerBone2D"]
 skew = 4.37114e-08
@@ -114,7 +126,11 @@ script = null
 position = Vector2( 75.591, -185.655 )
 skew = 4.37114e-08
 rest = Transform2D( 1, 0, 0, 1, 75.591, -185.655 )
+editor_settings/show_bone_gizmo = false
 script = null
+__meta__ = {
+"_local_pose_override_enabled_": true
+}
 
 [node name="ArmFarUpper" type="Polygon2D" parent="Skeleton2D/BodyBone2D/ArmFarUpperBone2D"]
 skew = 4.37114e-08
@@ -132,7 +148,11 @@ rest = Transform2D( 1, 0, 0, 1, -6.62802, 99.001 )
 auto_calculate_length_and_angle = false
 length = 155.0
 bone_angle = 78.54
+editor_settings/show_bone_gizmo = false
 script = null
+__meta__ = {
+"_local_pose_override_enabled_": true
+}
 
 [node name="ArmFarLower" type="Polygon2D" parent="Skeleton2D/BodyBone2D/ArmFarUpperBone2D/ArmFarLowerBone2D"]
 skew = 4.37114e-08
@@ -150,6 +170,7 @@ rest = Transform2D( 1, 0, 0, 1, -57.19, 17.653 )
 auto_calculate_length_and_angle = false
 length = 260.0
 bone_angle = 90.0
+editor_settings/show_bone_gizmo = false
 script = null
 
 [node name="LegClose" type="Polygon2D" parent="Skeleton2D/BodyBone2D/LegCloseBone2D"]
@@ -167,6 +188,7 @@ rest = Transform2D( 1, 0, 0, 1, 38.651, 0.731018 )
 auto_calculate_length_and_angle = false
 length = 260.0
 bone_angle = 90.0
+editor_settings/show_bone_gizmo = false
 script = null
 
 [node name="LegFar" type="Polygon2D" parent="Skeleton2D/BodyBone2D/LegFarBone2D"]
@@ -179,14 +201,14 @@ uv = PackedVector2Array( 286.17, 388.23, 317.021, 385.571, 345.745, 396.741, 338
 script = null
 
 [node name="BackArm_Target" type="Sprite2D" parent="."]
-position = Vector2( 202.878, 125.682 )
+position = Vector2( 206.06, 156.088 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 2 )
 script = null
 
 [node name="FrontArm_Target" type="Sprite2D" parent="."]
 self_modulate = Color( 0.792747, 0.90625, 0.141602, 1 )
-position = Vector2( 111.124, 209.794 )
+position = Vector2( 169.814, 178.328 )
 scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 2 )
 script = null
